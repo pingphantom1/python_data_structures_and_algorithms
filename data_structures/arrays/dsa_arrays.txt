@@ -1,0 +1,25 @@
+Algorithm to find the lowest Number in an array
+
+
+HOW IT WORKS
+1. Go through the values in the array one by one
+2. Check if the current value is the lowest so far, and if it is, store it.
+3. After looking at all the values, the stored value will be the lowest of all values in the array
+
+
+THE ALGORITHM ITSELF
+
+1. Create a variable 'minVal' and set it equal to the first value of the array.
+2. Go through every element in the array.
+3. If the current element has a lower value than 'minVal', update 'minVal' to this value.
+4. After looking at all the elements in the array, the 'minVal' variable now contains the lowest value.
+
+THE ALGORITHM CAN ALSO BE WRITTEN IN A WAY THAT LOOKS MORE LIKE PROGRAMMING LANGUAGE
+
+Variable 'minVal' = array[0]
+For each element in the array
+    If current element < minVal
+        minVal = current element 
+
+
+THIS ALGORITM IS IMPLEMENTED IN THE 'dsa_arrays.py' FILE

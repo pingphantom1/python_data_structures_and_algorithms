@@ -1,0 +1,41 @@
+Calculating the nth fibonacci number manually simulating how the recurssion 
+function in the python file does the calculation
+
+the function is below
+
+def nthFiboNum(n):
+    if n <= 1:
+        return n
+    else:
+        return nthFiboNum(n - 1) + nthFiboNum(n - 2)
+
+
+The 6th Fibonacci number
+since python is a zero based index language,
+for the 6th fibonacci number, n = 5
+
+so nthFiboNum(5) = nthFiboNum(5 - 1) + nthFibonum(5 - 2) and the function calls itself again 
+for the values of the substractions
+
+the total break down now
+                                                     nthFiboNum(5)
+                                                           |
+                                        nthFiboNum(4)      +        nthFiboNum(3)
+                                        |                                       |
+                  nthFiboNum(3)         +         nthFiboNum(2)                 nthFiboNum(2)        +         nthFiboNum(1)
+                  |                                      |                             |                              |
+   nthFiboNum(2)  +  nthFiboNum(1)      nthFiboNum(1) + nthFiboNum(0)       nthFiboNum(1) + nthFiboNum(0)
+        |
+nthFiboNum(1) + nthFiboNum(0)
+
+
+So the results of the breakdown will be
+
+5
+3  + 2
+2 + 1     1 + 1
+1 + 1   1 + 0    1 + 0
+1+0
+
+on the top of the calculation our value is 5
+Therefore the 6th fibonacci number (n = 5) is 5
