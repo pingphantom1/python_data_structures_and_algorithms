@@ -28,5 +28,38 @@ def selection_sort(my_array):
 
     return my_array
 
-print('Sorted array:', selection_sort(my_array2))
-# print("Sorted array", my_array)
+# print('Sorted array:', selection_sort(my_array2))
+
+
+# Use Selection sort to sort this list containing dictionaries based on the first name values  of the dictionaries
+
+dict_list_to_sort = [
+    {'First Name': 'Raj', 'Last Name': 'Nayyar'},
+    {'First Name': 'Suraj', 'Last Name': 'Sharma'},
+    {'First Name': 'Karan', 'Last Name': 'Kumar'},
+    {'First Name': 'Jade', 'Last Name': 'Canary'},
+    {'First Name': 'Raj', 'Last Name': 'Thakur'},
+    {'First Name': 'Raj', 'Last Name': 'Sharma'},
+    {'First Name': 'Kiran', 'Last Name': 'Kamla'},
+    {'First Name': 'Armaan', 'Last Name': 'Kumar'},
+    {'First Name': 'Jaya', 'Last Name': 'Sharma'},
+    {'First Name': 'Ingrid', 'Last Name': 'Galore'},
+    {'First Name': 'Jaya', 'Last Name': 'Seth'},
+    {'First Name': 'Armaan', 'Last Name': 'Dadra'},
+    {'First Name': 'Ingrid', 'Last Name': 'Maverick'},
+    {'First Name': 'Aahana', 'Last Name': 'Arora'}
+]
+
+def dict_list_selection_sort(my_array):
+    n = len(my_array)
+    for i in range(n):
+        min_index = i
+        for j in range(i + 1, n):
+            if my_array[j]['First Name'] < my_array[min_index]['First Name']:
+                min_index = j
+        my_array[i], my_array[min_index] = my_array[min_index], my_array[i]
+
+    return my_array
+
+# print('Sorted array:', selection_sort(my_array2))
+print('Sorted list of dictionaries: ', dict_list_selection_sort(dict_list_to_sort))
