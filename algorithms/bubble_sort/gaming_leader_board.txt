@@ -1,0 +1,33 @@
+The Challenge: The Gaming Leaderboard 🎮
+
+Imagine you are building a simple backend utility for an arcade game. You receive a list of player records, and you need to display a sorted leaderboard.
+The Sorting Rules:
+
+    Primary Rule: Sort the players primarily by their score in descending order (highest score at the top).
+
+    Tie-Breaker Rule: If two or more players have the exact same score, sort those players alphabetically by their name in ascending order (A to Z).
+
+The Starting Data:
+
+leaderboard = [
+    {'name': 'zara',  'score': 1200, 'level': 5},
+    {'name': 'alex',  'score': 1500, 'level': 8},
+    {'name': 'bob',   'score': 1200, 'level': 4},
+    {'name': 'chris', 'score': 900,  'level': 3},
+    {'name': 'anna',  'score': 1500, 'level': 7},
+]
+
+Your Task:
+
+Write a custom Bubble Sort function that processes this list and handles both the primary score sorting and the secondary name tie-breaker.
+Expected Output:
+
+When you print your sorted leaderboard, it should look like this:
+
+[
+    {'name': 'alex', 'score': 1500, 'level': 8},
+    {'name': 'anna', 'score': 1500, 'level': 7},   # Tied score (1500), sorted alphabetically: 'alex' before 'anna'
+    {'name': 'bob', 'score': 1200, 'level': 4},
+    {'name': 'zara', 'score': 1200, 'level': 5},   # Tied score (1200), sorted alphabetically: 'bob' before 'zara'
+    {'name': 'chris', 'score': 900, 'level': 3}
+]
