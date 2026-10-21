@@ -1,0 +1,26 @@
+The Challenge: The E-Commerce Price Tag Sorter 🛒
+
+Imagine you are building a backend feature for an online store. Customers want to browse products sorted from the lowest price to the highest price.
+
+The Starting Data:
+catalog = [
+    {'item': 'Wireless Mouse', 'price': 29.99},
+    {'item': 'Mechanical Keyboard', 'price': 89.50},
+    {'item': 'USB-C Cable', 'price': 12.00},
+    {'item': 'Gaming Monitor', 'price': 249.99},
+    {'item': 'Desk Lamp', 'price': 45.00}
+]
+
+Your Task:
+
+Write a Python function using Selection Sort from scratch to sort this list of dictionaries by their price in ascending order (lowest to highest).
+
+Expected output
+
+[
+    {'item': 'USB-C Cable', 'price': 12.00},
+    {'item': 'Wireless Mouse', 'price': 29.99},
+    {'item': 'Desk Lamp', 'price': 45.00},
+    {'item': 'Mechanical Keyboard', 'price': 89.50},
+    {'item': 'Gaming Monitor', 'price': 249.99}
+]
