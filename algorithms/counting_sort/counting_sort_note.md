@@ -104,3 +104,49 @@ Where:
 - **K** is the maximum value (or the range of values, depending on the implementation).
 
 This makes Counting Sort extremely fast when the range of numbers is small compared to the number of elements being sorted.
+
+
+
+# Key Optimizations for Counting Sort
+
+## 1. Handling Negative Numbers (The Offset Adjustment)
+
+If your array contains negative numbers (e.g., `[-3, 1, -1, 3, 2]`), a standard index of `count[num]` will crash with an `IndexError`.
+
+**The Optimization:**
+
+1. Find both the `min_val` and `max_val`.
+2. Shift all numbers by subtracting `min_val` so that the smallest number maps to index `0`.
+3. When reconstructing the sorted array, add `min_val` back to each value.
+
+## 2. Making It Stable (Cumulative Count Optimization)
+
+In standard textbook definitions, Counting Sort uses a **cumulative frequency (prefix sum) array**.
+
+**Why do it?**
+
+By summing up the counts sequentially, each number's count tells you its exact final ending index in the sorted output array.
+
+This makes the algorithm **stable**, meaning duplicate elements maintain their original relative order.
+
+This stability is precisely what allows Counting Sort to power **Radix Sort** for sorting larger multi-digit numbers.
+
+## 3. Managing Large Ranges (Sparse Counting Sort / Alternatives)
+
+If your range **K** (`max_val`) is astronomically larger than your input size **N**, the array creation step:
+
+```python
+count = [0] * (max_val + 1)
+```
+
+will cause a memory overflow.
+
+**The Optimization:**
+
+Instead of creating a massive array, you can use a **hash map** (or dictionary in Python) to store frequencies only for the numbers that actually appear.
+
+**Important Note:**
+
+Using this approach changes the implementation. Instead of directly accessing elements through array indices, you use hash-map lookups to retrieve frequencies.
+
+However, note that this does not automatically make the algorithm's time complexity closer to `O(N log N)`. With a well-implemented hash map, frequency counting is typically **O(N)** on average, while sorting the distinct keys introduces an additional sorting cost.
